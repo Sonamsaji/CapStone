@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Smoke">
+    <listeners>
+        <listener class-name="com.automation.listeners.AllureListener"></listener>
+    </listeners>
+    <test name="Smoke Test">
+        <classes>
+            <class name="com.automation.tests.NavigationFunctionalityTest"></class>
+            <class name="com.automation.tests.FilterAndSortTest"></class>
+            <class name="com.automation.tests.FooterFunctionalityTest"></class>
+        </classes>
+    </test>
+</suite>
