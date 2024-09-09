@@ -23,6 +23,7 @@ public class CancelSteps {
     public void verify_an_appropriate_error_message_is_displayed_to_the_user() {
         cancelPage.isErrorMessageDisplayed().isVisible();
     }
+
     @When("the user clicks the chatbot icon")
     public void theUserClicksTheChatbotIcon() throws InterruptedException {
         cancelPage.clicksChatBot();

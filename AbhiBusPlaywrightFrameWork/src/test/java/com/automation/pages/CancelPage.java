@@ -3,7 +3,7 @@ package com.automation.pages;
 import com.automation.utils.ConfigReader;
 import com.microsoft.playwright.Locator;
 
-public class CancelPage extends BasePage{
+public class CancelPage extends BasePage {
 
     Locator cancelText;
     Locator ticketNumber;
@@ -13,7 +13,7 @@ public class CancelPage extends BasePage{
     Locator chatBot;
     Locator botText;
 
-    public CancelPage(){
+    public CancelPage() {
         cancelText = page.locator("//div[@class=\"jrnytye\"]//h1");
         ticketNumber = page.locator("#ticket_num");
         phoneNumber = page.locator("#phonenum");
@@ -22,13 +22,14 @@ public class CancelPage extends BasePage{
         chatBot = page.locator(".verloop-button");
         botText = page.locator("//*[@id='chat-window-wrapper']/div/div[1]/div[1]/span");
     }
+
     public Locator userIsOnTheCancelBookingPage() {
         return cancelText;
     }
 
-    public void userEntersAnInvalidData()  {
-        ticketNumber.fill("1234567");
-        phoneNumber.fill("7894566783");
+    public void userEntersAnInvalidData() {
+        ticketNumber.fill(ConfigReader.getConfigValue("ticketNumber"));
+        phoneNumber.fill(ConfigReader.getConfigValue("phoneNumber"));
         retrieveButton.click();
         page.waitForTimeout(3000);
     }
@@ -38,7 +39,7 @@ public class CancelPage extends BasePage{
     }
 
     public void clicksChatBot() {
-        while(!chatBot.isVisible()){
+        while (!chatBot.isVisible()) {
             page.reload();
         }
         chatBot.click();
