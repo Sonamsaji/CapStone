@@ -11,6 +11,7 @@ public class CancelBookingPage extends BasePage {
     //locator for getting cancel Ticket Text
     @FindBy(xpath = "//div[@class=\"jrnytye\"]//h1")
     WebElement cancelText;
+
     //locator for entering ticket number
     @FindBy(id = "ticket_num")
     WebElement ticketNumber;
@@ -54,7 +55,6 @@ public class CancelBookingPage extends BasePage {
         while (!chatBot.isDisplayed()) {
             driver.navigate().refresh();
         }
-        //wait.until(ExpectedConditions.elementToBeClickable(chatBot));
         chatBot.click();
     }
 

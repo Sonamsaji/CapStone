@@ -10,7 +10,7 @@ public class ConfigReader {
     public static void initConfig() {
         prop = new Properties();
         try {
-            prop.load(new FileInputStream("src/test/resources/Config/config.properties"));
+            prop.load(new FileInputStream("src/test/resources/config/Config.properties"));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
